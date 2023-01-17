@@ -1,6 +1,6 @@
 "use strict";
 
-var AWClient = require("../aw-client-js/out/aw-client.js").AWClient;
+var AWClient = require("../kalpa-client-js/out/aw-client.js").AWClient;
 var ua_parser = require("ua-parser-js");
 var retry = require("p-retry") // See aw-watcher-web issue #41
 

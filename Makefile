@@ -7,14 +7,14 @@ build: install
 
 install:
 	npm ci
-	(cd aw-client-js; npm ci; npm run compile)
+	(cd kalpa-client-js; npm ci; npm run compile)
 
 update:
 	npm run build
 
 clean:
 	rm -rf node_modules build
-	(cd aw-client-js; rm -rf node_modules)
+	(cd kalpa-client-js; rm -rf node_modules)
 
 build.zip: out/app.js
 	rm -f $@
@@ -28,10 +28,10 @@ srczip:
 	git archive --prefix=aw-watcher-web/ -o build/build.zip HEAD
 	# archive the kalpa-watcher-media subrepo
 	(cd kalpa-watcher-media/ && git archive --prefix=kalpa-watcher-web/kalpa-watcher-media/ -o ../build/kalpa-watcher-media.zip HEAD)
-	(cd aw-client-js/ && git archive --prefix=aw-watcher-web/aw-client-js/ -o ../build/aw-client-js.zip HEAD)
+	(cd kalpa-client-js/ && git archive --prefix=aw-watcher-web/kalpa-client-js/ -o ../build/kalpa-client-js.zip HEAD)
 	# extract the archives into a single directory
 	(cd build && unzip -q build.zip)
-	(cd build && unzip -q aw-client-js.zip)
+	(cd build && unzip -q kalpa-client-js.zip)
 	(cd build && unzip -q kalpa-watcher-media.zip)
 	# zip the whole thing
 	(cd build && zip -r build.zip build)
