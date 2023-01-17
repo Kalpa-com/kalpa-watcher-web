@@ -1,5 +1,5 @@
-[submodule "media"]
-	path = media
+[submodule "kalpa-watcher-media"]
+	path = kalpa-watcher-media
 	url = https://github.com/Kalpa-com/kalpa-watcher-media.git
 [submodule "aw-client-js"]
 	path = aw-client-js
