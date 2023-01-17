@@ -31,6 +31,6 @@ Then build with:
 make build
 ```
 
-The resulting `aw-watcher-web.zip` can then be loaded into your browser in development mode. (for Firefox, loading unsigned extensions is only possible in Firefox Nightly and Developer Edition).
+The resulting `build.zip` can then be loaded into your browser in development mode. (for Firefox, loading unsigned extensions is only possible in Firefox Nightly and Developer Edition).
 
 For further build instructions, refer to the `Makefile`.

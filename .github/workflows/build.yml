@@ -32,7 +32,7 @@ jobs:
     - name: Upload artifact
       uses: actions/upload-artifact@v2-preview
       with:
-        name: aw-watcher-web
-        path: aw-watcher-web.zip
+        name: build
+        path: build.zip
 
 

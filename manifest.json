@@ -6,11 +6,11 @@
   "description": "Log the current tab and your browser activity.",
   "version": "0.4.3",
   "icons": {
-    "128": "media/logo/logo-128.png"
+    "128": "kalpa-watcher-media/logo/logo-128.png"
   },
 
   "browser_action": {
-    "default_icon": "media/logo/logo-128.png",
+    "default_icon": "kalpa-watcher-media/logo/logo-128.png",
     "default_popup": "static/popup.html"
   },
 

@@ -3,7 +3,7 @@
 # This is what Google and Mozilla wants us to upload when we release a new version to the Addon "store"
 build: install
 	npm run build
-	make aw-watcher-web.zip
+	make build.zip
 
 install:
 	npm ci
@@ -16,7 +16,7 @@ clean:
 	rm -rf node_modules build
 	(cd aw-client-js; rm -rf node_modules)
 
-aw-watcher-web.zip: out/app.js
+build.zip: out/app.js
 	rm -f $@
 	zip -r -FS $@ manifest.json static/ out/ kalpa-watcher-media/logo/logo-128.png kalpa-watcher-media/banners/banner.png
 
@@ -25,24 +25,24 @@ srczip:
 	rm -rfv build
 	mkdir -p build
 	# archive the main repo
-	git archive --prefix=aw-watcher-web/ -o build/aw-watcher-web.zip HEAD
+	git archive --prefix=aw-watcher-web/ -o build/build.zip HEAD
 	# archive the kalpa-watcher-media subrepo
 	(cd kalpa-watcher-media/ && git archive --prefix=kalpa-watcher-web/kalpa-watcher-media/ -o ../build/kalpa-watcher-media.zip HEAD)
 	(cd aw-client-js/ && git archive --prefix=aw-watcher-web/aw-client-js/ -o ../build/aw-client-js.zip HEAD)
 	# extract the archives into a single directory
-	(cd build && unzip -q aw-watcher-web.zip)
+	(cd build && unzip -q build.zip)
 	(cd build && unzip -q aw-client-js.zip)
 	(cd build && unzip -q kalpa-watcher-media.zip)
 	# zip the whole thing
-	(cd build && zip -r aw-watcher-web.zip aw-watcher-web)
+	(cd build && zip -r build.zip build)
 	# clean up
 	(cd build && rm kalpa-watcher-media.zip)
 
 # Tests reproducibility of the build from srczip
 test-build-srczip: srczip build
 	(cd build/aw-watcher-web && make build)
-	@# check that aw-watcher-web.zip have the same size
-	@wc -c aw-watcher-web.zip build/aw-watcher-web/aw-watcher-web.zip | \
+	@# check that build.zip have the same size
+	@wc -c build.zip build/aw-watcher-web/build.zip | \
 		sort -n | \
 		cut -d' ' -f2 | \
 		uniq -c | \

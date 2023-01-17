@@ -1,4 +1,4 @@
-aw-watcher-web.zip
+*.zip
 out
 build
 node_modules

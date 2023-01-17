@@ -7,7 +7,7 @@ var retry = require("p-retry") // See aw-watcher-web issue #41
 function emitNotification(title, message) {
   chrome.notifications.create({
     "type": "basic",
-    "iconUrl": chrome.extension.getURL("media/logo/logo-128.png"),
+    "iconUrl": chrome.extension.getURL("kalpa-watcher-media/logo/logo-128.png"),
     "title": title,
     "message": message,
   });
