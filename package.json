@@ -1,12 +1,9 @@
 {
-    "name": "aw-watcher-web",
+    "name": "kalpa-watcher-web",
     "license": "MPL-2.0",
-    "bugs": {
-        "url": "https://github.com/ActivityWatch/aw-watcher-web/issues"
-    },
     "repository": {
         "type": "git",
-        "url": "git+https://github.com/ActivityWatch/aw-watcher-web.git"
+        "url": "git+https://github.com/kalpa-com/kalpa-watcher-web.git"
     },
     "dependencies": {
         "browserify": "^16.5.2",
